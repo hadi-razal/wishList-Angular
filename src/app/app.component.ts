@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
 
-  items = [
+  items: WishItem[] = [
     new WishItem('To Learn Angular'),
     new WishItem('To Learn MySQL', true),
     new WishItem('To Learn SpringBoot', false)

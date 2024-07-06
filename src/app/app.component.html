@@ -1,5 +1,7 @@
 <div class="container">
-  <ul class="wish-list">
+  <div *ngIf="items.length == 0">There is no wish to show</div>
+
+  <ul *ngIf="items.length > 0" class="wish-list">
     <li *ngFor="let item of items">
       <div class="form-check">
         <label for="form-check-label">
