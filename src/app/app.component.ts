@@ -34,14 +34,16 @@ export class AppComponent {
 
 
   fileterChanged(value: any) {
-    
-    if (value === 0) {
+
+
+    if (value === "0") {
       this.visibleItems == this.items
-    } else if (value === 1) {
+    } else if (value === "1") {
       this.visibleItems = this.items.filter(item => !item.isComplete)
-    } else {
+    } else if (value === "2") {
       this.visibleItems = this.items.filter(item => item.isComplete)
     }
+
 
     this.ListFilter = value;
   }
