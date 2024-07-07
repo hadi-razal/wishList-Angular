@@ -10,23 +10,40 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   items: WishItem[] = [
     new WishItem('To Learn Angular'),
-    new WishItem('To Learn MySQL', true),
-    new WishItem('To Learn MySQL', true),
-    new WishItem('To Learn SpringBoot', false),
-    new WishItem('To Learn SpringBoot', false),
-    new WishItem('To Learn SpringBoot', false)
+    new WishItem('To Learn React', true),
+    new WishItem('To Learn MySQL', false),
+    new WishItem('To Learn Vue Js', true),
   ];
 
   newWishText = '';
+  ListFilter: string = '0';
 
   title = 'wishlist';
 
   addNewWish() {
     this.items.push(new WishItem(this.newWishText));
     this.newWishText = ''
+  }
+
+  visibleItems: WishItem[] = this.items;
+
+
+
+  fileterChanged(value: any) {
+    
+    if (value === 0) {
+      this.visibleItems == this.items
+    } else if (value === 1) {
+      this.visibleItems = this.items.filter(item => !item.isComplete)
+    } else {
+      this.visibleItems = this.items.filter(item => item.isComplete)
+    }
+
+    this.ListFilter = value;
   }
 
   toggleItem(item: WishItem) {
