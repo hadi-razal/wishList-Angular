@@ -12,9 +12,12 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent {
   items: WishItem[] = [
-    // new WishItem('To Learn Angular'),
-    // new WishItem('To Learn MySQL', true),
-    // new WishItem('To Learn SpringBoot', false)
+    new WishItem('To Learn Angular'),
+    new WishItem('To Learn MySQL', true),
+    new WishItem('To Learn MySQL', true),
+    new WishItem('To Learn SpringBoot', false),
+    new WishItem('To Learn SpringBoot', false),
+    new WishItem('To Learn SpringBoot', false)
   ];
 
   newWishText = '';
